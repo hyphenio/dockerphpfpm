@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" > /etc/apt/sources.list
 
-RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install php7.0 php7.0-fpm php7.0-tidy php7.0-xml php7.0-bcmath php7.0-gd php7.0-mbstring php7.0-curl php7.0-mysql php7.0-zip php7.0-mcrypt php-imagick && apt-get clean && apt-get autoclean && apt-get autoremove
+RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install php7.0 php7.0-fpm php7.0-tidy php7.0-xml php7.0-bcmath php7.0-gd php7.0-mbstring php7.0-curl php7.0-mysql php7.0-zip php7.0-mcrypt php-imagick && apt-get -y clean && apt-get -y autoclean && apt-get -y autoremove
 
 WORKDIR /opt/app
 RUN echo "#!/bin/bash" > /usr/local/bin/entry.sh
