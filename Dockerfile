@@ -32,8 +32,7 @@ RUN apt-get -y autoremove
 
 WORKDIR /opt/app
 RUN echo "#!/bin/bash" > /bin/deploy.sh
-RUN echo "/usr/sbin/php-fpm7.0 --nodaemonize -y /opt/app/server/fpm/php-fpm.conf -c /opt/app/server/php" >> /bin/deploy.sh
+RUN echo "/usr/sbin/php-fpm7.1 --nodaemonize -y /opt/app/server/fpm/php-fpm.conf -c /opt/app/server/php" >> /bin/deploy.sh
 RUN chmod 777 /bin/deploy.sh
 
-EXPOSE 9000
 CMD ["/bin/deploy.sh"]
